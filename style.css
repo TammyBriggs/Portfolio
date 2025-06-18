@@ -218,6 +218,20 @@ span{
     width: 90%;
 }
 
+.tab-contents ul li{
+    list-style: none;
+    margin: 1rem 0;
+    font-size: 1.6rem;
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
 .skills-icons a{
     display: inline-flex;
     justify-content: center;
