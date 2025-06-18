@@ -50,7 +50,7 @@ function opentab(tabname) {
     tabcontent.classList.remove("active-tab");
   }
   event.currentTarget.classList.add("active-link");
-  document.getElementById(tabname).classList.add('active-tab');
+  document.getElementById(tabname).classList.add("active-tab");
 }
 
 // scroll reveal
@@ -68,3 +68,127 @@ ScrollReveal().reveal(
 );
 ScrollReveal().reveal(".home-content h1, .about-col-1", { origin: "left" });
 ScrollReveal().reveal(".home-content, .about-col-2", { origin: "right" });
+
+document
+  .querySelector('form[name="submit-to-google-sheet"]')
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.querySelector('input[name="Name"]').value.trim();
+    const email = document.querySelector('input[name="Email"]').value.trim();
+    const number = document.querySelector('input[name="Number"]').value.trim();
+    const subject = document
+      .querySelector('input[name="Subject"]')
+      .value.trim();
+    const message = document
+      .querySelector('textarea[name="Message"]')
+      .value.trim();
+
+    if (!name || !email || !number || !subject || !message) {
+      Toastify({
+        text: "❌ All fields are required.",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        style: {
+          background: "linear-gradient(to right,#f0960f,#c44020)",
+          fontSize: "1.6rem",
+          padding: "1rem 1.6rem",
+        },
+      }).showToast();
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      Toastify({
+        text: "❌ Invalid email address.",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        style: {
+          background: "linear-gradient(to right,#f0960f,#c44020)",
+          fontSize: "1.6rem",
+          padding: "1rem 1.6rem",
+        },
+      }).showToast();
+      return;
+    }
+
+    if (!isValidPhoneNumber(number)) {
+      Toastify({
+        text: "❌ Invalid phone number. Must be 10 digits.",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        style: {
+          background: "linear-gradient(to right,#f0960f,#c44020)",
+          fontSize: "1.6rem",
+          padding: "1rem 1.6rem",
+        },
+      }).showToast();
+      return;
+    }
+
+    if (!isValidFullName(name)) {
+      Toastify({
+        text: "❌ Invalid full name. Use only letters, hyphens, apostrophes, and spaces.",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        style: {
+          background: "linear-gradient(to right,#f0960f,#c44020)",
+          fontSize: "1.6rem",
+          padding: "1rem 1.6rem",
+        },
+      }).showToast();
+      return;
+    }
+
+    Toastify({
+      text: "✅ Message sent successfully!",
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+        fontSize: "1.6rem",
+        padding: "1rem 1.6rem",
+      },
+    }).showToast();
+
+    e.target.reset();
+  });
+
+// Helper functions
+function isValidEmail(email) {
+  if (!email || email.endsWith(".")) return false;
+  if (!email.includes("@")) return false;
+  const parts = email.split("@");
+  if (parts.length !== 2) return false;
+  const [localPart, domainPart] = parts;
+  if (!localPart || !domainPart || !domainPart.includes(".")) return false;
+  return true;
+}
+
+// Helper functions
+function isValidEmail(email) {
+  if (!email || email.endsWith(".")) return false;
+  if (!email.includes("@")) return false;
+  const parts = email.split("@");
+  if (parts.length !== 2) return false;
+  const [localPart, domainPart] = parts;
+  if (!localPart || !domainPart || !domainPart.includes(".")) return false;
+  return true;
+}
+
+function isValidPhoneNumber(phone) {
+  const cleanedPhone = phone.replace(/\D/g, "");
+  return cleanedPhone.length === 10;
+}
+
+function isValidFullName(name) {
+  const nameRegex = /^[\p{L}][\p{L}'\- ]*[\p{L}]$/u;
+  const trimmed = name.trim();
+  if (trimmed.length < 2) return false;
+  return nameRegex.test(trimmed);
+}

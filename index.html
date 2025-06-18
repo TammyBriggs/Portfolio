@@ -12,6 +12,8 @@
     />
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Toastify CSS -->
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   </head>
   <body>
     <!-- Header design -->
@@ -222,14 +224,14 @@
     <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Me!</span></h2>
 
-      <form action="#" name="submit-to-google-sheet">
+      <form action="#" name="submit-to-google-sheet" novalidate>
         <div class="input-box">
-          <input type="text" name="Name" placeholder="Full Name" />
-          <input type="email" name="Email" placeholder="Email Address" />
+          <input type="text" name="Name" placeholder="Full Name" required />
+          <input type="email" name="Email" placeholder="Email Address" required/>
         </div>
         <div class="input-box">
-          <input type="number" name="Number" placeholder="Mobile Number" />
-          <input type="text" name="Subject" placeholder="Email Subject" />
+          <input type="number" name="Number" placeholder="Mobile Number" required/>
+          <input type="text" name="Subject" placeholder="Email Subject" required/>
         </div>
         <textarea
           name="Message"
@@ -237,6 +239,7 @@
           cols="30"
           rows="10"
           placeholder="Your Message"
+          required
         ></textarea>
         <input type="submit" value="Send Message" class="btn" />
       </form>
@@ -257,6 +260,9 @@
 
     <!-- Javascript file -->
     <script src="script.js"></script>
+
+    <!-- Toastify JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <!-- Script for posting contact form to google sheets -->
     <script>
