@@ -105,7 +105,7 @@ span{
 
 .home-img img{
     width: 35vw;
-    height: 60vw;
+    height: 70vw;
     border-radius: 1%;
     animation: floatImage 4s ease-in-out infinite;
 }
@@ -162,9 +162,10 @@ span{
     box-shadow: none;
 }
 
-/* about{
-    padding: 4rem 0;
-} */
+.about{
+    padding-bottom: 4rem;
+    background: var(--second-bg-color);
+}
 
 .row{
     display: flex;
