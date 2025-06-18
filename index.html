@@ -18,6 +18,7 @@
       <i class="bx bx-menu" id="menu-icon"></i>
       <nav class="navbar">
         <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -30,13 +31,6 @@
         <h3>Hi, I'm</h3>
         <h1>Tamunotonye Briggs</h1>
         <h3>I'm a <span>Fullstack Developer</span></h3>
-        <p>
-          I am a self-driven Individual determined to use my passion for
-          technology and programming to create impactful advancements within the
-          continent of Africa, as well as plan and ensure its availability to
-          the widest range of people. Currently pursuing a Bachelors degree in
-          Software Engineering at the African Leadership University.
-        </p>
         <h3>Find Me On:</h3>
         <div class="social-media">
           <a
@@ -73,6 +67,33 @@
       </div>
       <div class="home-img">
         <img src="images/Tammy.png" alt="Image of myself" />
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section class="about" id="about">
+      <div class="about-container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/Tammy.png" alt="Picture of Tammy" />
+          </div>
+          <div class="about-col-2">
+            <h2 class="heading">About <span>Me</span></h2>
+            <p>
+              I am a self-driven Individual determined to use my passion for
+              technology and programming to create impactful advancements within
+              the continent of Africa, as well as plan and ensure its
+              availability to the widest range of people. Currently pursuing a
+              Bachelors degree in Software Engineering at the African Leadership
+              University.
+            </p>
+            <div class="tab-titles">
+                <p class="tab-links active-link">Skills</p>
+                <p class="tab-links">Experience</p>
+                <p class="tab-links">Education</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -210,7 +231,8 @@
 
     <!-- Script for posting contact form to google sheets -->
     <script>
-      const scriptURL = "https://script.google.com/macros/s/AKfycbyV7x0YYCcKcAxTdMgdGgy41oVHMxizCN0FWhzVWy50G5QLcm05fLW5eEyR4sF7bR3nbg/exec";
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyV7x0YYCcKcAxTdMgdGgy41oVHMxizCN0FWhzVWy50G5QLcm05fLW5eEyR4sF7bR3nbg/exec";
       const form = document.forms["submit-to-google-sheet"];
 
       form.addEventListener("submit", (e) => {
