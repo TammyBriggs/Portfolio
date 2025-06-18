@@ -107,6 +107,19 @@ span{
     width: 35vw;
     height: 60vw;
     border-radius: 1%;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-1.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .home-content p{
