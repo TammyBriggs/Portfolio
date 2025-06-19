@@ -185,8 +185,9 @@ function isValidEmail(email) {
 }
 
 function isValidPhoneNumber(phone) {
-  const cleanedPhone = phone.replace(/\D/g, "");
-  return cleanedPhone.length === 10 || cleanedPhone.length === 11;
+  const cleanedPhone = phone.trim();
+  const digitsOnly = /^\d{10,11}$/;
+  return digitsOnly.test(cleanedPhone);
 }
 
 function isValidFullName(name) {
