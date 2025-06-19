@@ -116,7 +116,7 @@ document
 
     if (!isValidPhoneNumber(number)) {
       Toastify({
-        text: "❌ Invalid phone number. Must be 10 or digits.",
+        text: "❌ Invalid phone number. Must be 10 or 11 digits.",
         duration: 3000,
         gravity: "top",
         position: "right",
@@ -184,20 +184,9 @@ function isValidEmail(email) {
   return true;
 }
 
-// Helper functions
-function isValidEmail(email) {
-  if (!email || email.endsWith(".")) return false;
-  if (!email.includes("@")) return false;
-  const parts = email.split("@");
-  if (parts.length !== 2) return false;
-  const [localPart, domainPart] = parts;
-  if (!localPart || !domainPart || !domainPart.includes(".")) return false;
-  return true;
-}
-
 function isValidPhoneNumber(phone) {
   const cleanedPhone = phone.replace(/\D/g, "");
-  return cleanedPhone.length === 10 || 11;
+  return cleanedPhone.length === 10 || cleanedPhone.length === 11;
 }
 
 function isValidFullName(name) {
