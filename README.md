@@ -6,7 +6,7 @@ Welcome to the source code for my personal portfolio website. This project showc
 
 ## 🚀 Live Demo
 
-🔗 [View Portfolio Website]([https://your-github-username.github.io/your-repo-name/](https://tammybriggs.github.io/Portfolio/)
+🔗 [View Portfolio Website](https://tammybriggs.github.io/Portfolio/)
 
 ---
 
