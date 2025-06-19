@@ -45,4 +45,5 @@ Welcome to the source code for my personal portfolio website. This project showc
 ├── script.js              # Main JavaScript (navbar, validation, animations)
 ├── images/                # Profile images, project screenshots
 ├── Tamunotonye_Briggs_Resume.pdf
-└── README.md              # Project overview and usage instructions
+├── README.md                    # Project overview and usage instructions
+└── LICENSE                      # MIT License for open-source distribution
