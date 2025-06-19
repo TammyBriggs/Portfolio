@@ -514,7 +514,7 @@ span {
   }
   .home-img img {
     width: 70vw;
-    margin-top: 4rem;
+    height: 100vw;
   }
   .row {
     flex-direction: column-reverse;
