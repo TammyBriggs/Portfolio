@@ -116,7 +116,7 @@ document
 
     if (!isValidPhoneNumber(number)) {
       Toastify({
-        text: "❌ Invalid phone number. Must be 10 digits.",
+        text: "❌ Invalid phone number. Must be 10 or digits.",
         duration: 3000,
         gravity: "top",
         position: "right",
@@ -197,7 +197,7 @@ function isValidEmail(email) {
 
 function isValidPhoneNumber(phone) {
   const cleanedPhone = phone.replace(/\D/g, "");
-  return cleanedPhone.length === 10;
+  return cleanedPhone.length === 10 || 11;
 }
 
 function isValidFullName(name) {
