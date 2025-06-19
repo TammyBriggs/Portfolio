@@ -156,6 +156,20 @@ document
       },
     }).showToast();
 
+    fetch(
+      "https://script.google.com/macros/s/AKfycbyV7x0YYCcKcAxTdMgdGgy41oVHMxizCN0FWhzVWy50G5QLcm05fLW5eEyR4sF7bR3nbg/exec",
+      {
+        method: "POST",
+        body: new FormData(e.target),
+      }
+    )
+      .then((response) =>
+        console.log("Form submitted to Google Sheets!", response)
+      )
+      .catch((error) =>
+        console.error("Error submitting to Google Sheets!", error)
+      );
+
     e.target.reset();
   });
 

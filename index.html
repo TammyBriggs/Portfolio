@@ -267,14 +267,11 @@
     <!-- Script for posting contact form to google sheets -->
     <script>
       const scriptURL =
-        "https://script.google.com/macros/s/AKfycbyV7x0YYCcKcAxTdMgdGgy41oVHMxizCN0FWhzVWy50G5QLcm05fLW5eEyR4sF7bR3nbg/exec";
+      "https://script.google.com/macros/s/AKfycbyYhKg_VdrmzOXHOArcQ37ia1rsC9UQyYLVu_ewQ2CyZD6MAaxdkmyUPGJVhkSmnypU0A/exec";
       const form = document.forms["submit-to-google-sheet"];
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => console.log("Success!", response))
-          .catch((error) => console.error("Error!", error.message));
       });
     </script>
   </body>
