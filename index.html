@@ -84,7 +84,7 @@
       <div class="about-container">
         <div class="row">
           <div class="about-col-1">
-            <img src="images/Tammy2.jpg" alt="Picture of Tammy" />
+            <img src="images/Tammy3.png" alt="Picture of Tammy" />
           </div>
           <div class="about-col-2">
             <h2 class="heading">About <span>Me</span></h2>
@@ -108,13 +108,13 @@
             <div class="tab-contents active-tab" id="skills">
               <ul>
                 <li><span>Full stack web development</span><br />Experience building contemporary, dynamic, and effective web applications using 				tools like JavaScript, React, Flask, and Python</li>
+                <li><span>Mobile App Development</span><br />Experience building functional and engaging mobile applications and practical UI 				prototyping using tools like Flutter and Figma.</li>
                 <li><span>Linux</span><br />Specializing in Low-Level Programming and Linux environments.</li>
                 <li>
                   <span>Blockchain</span><br />Proficient in designing and applying Blockchain applications, samrt contracts and technologies.
                 </li>
                 <li>
-                  <span>Research and Planning</span><br />Strong background in conducting deep research, managing data collection, and planning strategic content rollouts.
-                <li><span>Presentations</span><br />Skilled in organizing thoughts and ideas into clear, easy-to-follow documents and case studies, utilizing tools like Canva Pro.</li>
+                  <span>Research and Planning</span><br />Strong background in conducting deep research, managing data collection, and planning 				strategic content rollouts.           
               </ul>
             </div>
             <div class="tab-contents" id="experience">
@@ -165,33 +165,59 @@
       </div>
     </section>
 
-    <!-- Servicess section -->
-    <section class="services" id="services">
-      <h2 class="heading">My <span>Services</span></h2>
-      <div class="services-container">
-        <div class="services-box">
-          <i class="bx bx-laptop"></i>
-          <h3>Full Stack Web Dev</h3>
-          <p>
-            Designing and implementing web services and APIs, ensuring smooth integration with front-end components to handle real-world issues.
-          </p>
-        </div>
-        <div class="services-box">
-          <i class="bx bxl-tux"></i>
-          <h3>Linux Programming</h3>
-          <p>
-            Developing low-level software solutions, managing web infrastructure, and operating effectively within Linux environments.
-          </p>
-        </div>
-        <div class="services-box">
-          <i class="bx bx-cubes"></i>
-          <h3>Blockchain Technology</h3>
-          <p>
-           Creating decentralized applications and leveraging blockchain architecture adn smart contracts for secure, forward-thinking digital solutions.
-          </p>
-        </div>
+    <!-- Services section -->
+<section class="services" id="services">
+  <h2 class="heading">My <span>Services</span></h2>
+  
+  <div class="services-carousel-container">
+    <!-- Left Navigation Arrow -->
+    <button class="carousel-btn left-btn" id="leftBtn" style="display: none;">
+      <i class="bx bx-chevron-left"></i>
+    </button>
+    
+    <!-- Wrapper holding the cards -->
+    <div class="services-wrapper" id="servicesWrapper">
+      
+      <div class="service-card">
+        <i class="bx bx-laptop"></i>
+        <h3>Full Stack Web Dev</h3>
+        <p>
+          Designing and implementing web services and APIs, ensuring smooth integration with front-end components to handle real-world issues.
+        </p>
       </div>
-    </section>
+      
+      <div class="service-card">
+        <i class="bx bx-mobile-alt"></i>
+        <h3>Mobile App Development</h3>
+        <p>
+          Designing and building intuitive, cross-platform mobile applications that deliver seamless user experiences from prototype to deployment.
+        </p>
+      </div>
+      
+      <div class="service-card">
+        <i class="bx bxl-tux"></i>
+        <h3>Linux Programming</h3>
+        <p>
+          Developing low-level software solutions, managing web infrastructure, and operating effectively within Linux environments.
+        </p>
+      </div>
+      
+      <div class="service-card">
+        <i class="bx bx-link"></i>
+        <h3>Blockchain Technology</h3>
+        <p>
+          Creating decentralized applications and leveraging blockchain architecture and smart contracts for secure, forward-thinking digital solutions.
+        </p>
+      </div>
+      
+    </div>
+
+    <!-- Right Navigation Arrow -->
+    <button class="carousel-btn right-btn" id="rightBtn">
+      <i class="bx bx-chevron-right"></i>
+    </button>
+  </div>
+</section>
 
     <!-- Projects section -->
     <section class="portfolio" id="projects">

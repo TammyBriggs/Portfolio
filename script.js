@@ -53,6 +53,51 @@ function opentab(tabname) {
   document.getElementById(tabname).classList.add("active-tab");
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const wrapper = document.getElementById('servicesWrapper');
+  const leftBtn = document.getElementById('leftBtn');
+  const rightBtn = document.getElementById('rightBtn');
+
+  if (wrapper && leftBtn && rightBtn) {
+    // Function to check scroll position and toggle arrow visibility
+    const handleArrowVisibility = () => {
+      const maxScrollLeft = wrapper.scrollWidth - wrapper.clientWidth;
+      
+      // Show/hide left button
+      if (wrapper.scrollLeft > 0) {
+        leftBtn.style.display = 'flex';
+      } else {
+        leftBtn.style.display = 'none';
+      }
+
+      // Show/hide right button (using -2 to account for pixel rounding)
+      if (wrapper.scrollLeft >= maxScrollLeft - 2) {
+        rightBtn.style.display = 'none';
+      } else {
+        rightBtn.style.display = 'flex';
+      }
+    };
+
+    // Scroll Right
+    rightBtn.addEventListener('click', () => {
+      const cardWidth = wrapper.querySelector('.service-card').offsetWidth + 20; // card width + gap
+      wrapper.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+
+    // Scroll Left
+    leftBtn.addEventListener('click', () => {
+      const cardWidth = wrapper.querySelector('.service-card').offsetWidth + 20; // card width + gap
+      wrapper.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+
+    // Listen to scroll events (catches trackpad/touch swipes as well)
+    wrapper.addEventListener('scroll', handleArrowVisibility);
+    
+    // Initial check on page load
+    handleArrowVisibility();
+  }
+});
+
 // scroll reveal
 ScrollReveal({
   // reset: true,

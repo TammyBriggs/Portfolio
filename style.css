@@ -234,7 +234,7 @@ span {
   display: block;
 }
 
-.skills-icons a {
+.skills-icons i {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -250,7 +250,7 @@ span {
   cursor: pointer;
 }
 
-.skills-icons a:hover {
+.skills-icons i:hover {
   background: var(--main-color);
   color: var(--second-bg-color);
   box-shadow: 0 0 1rem var(--main-color);
@@ -261,20 +261,40 @@ span {
   font-size: 4.5rem;
 }
 
+/* --- SERVICES CAROUSEL --- */
 .services h2 {
   margin-bottom: 5rem;
 }
 
-.services-container {
+.services-carousel-container {
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  width: 100%;
 }
 
-.services-container .services-box {
-  flex: 1 1 30rem;
+.services-wrapper {
+  display: flex;
+  gap: 2rem; /* Matches your original gap */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  padding: 1rem 0 2rem; /* Added bottom padding for shadow/hover overflow */
+  width: 100%;
+}
+
+.services-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Service Card Styling (matching your original .services-box) */
+.service-card {
+  max-width: calc(30%); /* 3 cards visible */
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  
+  /* Original card styles */
   background: var(--second-bg-color);
   padding: 3rem 2rem 4rem;
   border-radius: 2rem;
@@ -283,23 +303,76 @@ span {
   transition: 0.5s ease;
 }
 
-.services-container .services-box:hover {
+.service-card:hover {
   border-color: var(--main-color);
   transform: scale(1.02);
 }
 
-.services-box i {
+.service-card i {
   font-size: 7rem;
   color: var(--main-color);
 }
 
-.services-box h3 {
+.service-card h3 {
   font-size: 2.6rem;
 }
 
-.services-box p {
+.service-card p {
   font-size: 1.6rem;
   margin: 1rem 0 3rem;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  background: var(--bg-color);
+  color: var(--main-color);
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  font-size: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 0 1rem var(--bg-color);
+  transition: 0.4s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--main-color);
+  color: var(--second-bg-color);
+  box-shadow: 0 0 1rem var(--main-color);
+  transform: scale(1.1);
+}
+
+.left-btn {
+  left: -2.5rem;
+}
+
+.right-btn {
+  right: -2.5rem;
+}
+
+/* Responsive Rules for Carousel */
+@media (max-width: 991px) {
+  .service-card {
+    min-width: calc(50% - 1rem); /* 2 cards visible on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    min-width: 100%; /* 1 card visible on mobile screens */
+  }
+  .left-btn {
+    left: 0;
+  }
+  .right-btn {
+    right: 0;
+  }
 }
 
 .portfolio {
