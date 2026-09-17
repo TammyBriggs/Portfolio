@@ -202,7 +202,7 @@ document
     }).showToast();
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbyV7x0YYCcKcAxTdMgdGgy41oVHMxizCN0FWhzVWy50G5QLcm05fLW5eEyR4sF7bR3nbg/exec",
+      "https://script.google.com/macros/s/AKfycbzqnbJaQSxVx1ZV2e8YfIQM4DHplm4UlGQyYZB1nYdHJ_jsRzqADGXiieJhUHer84EkZA/exec",
       {
         method: "POST",
         body: new FormData(e.target),
