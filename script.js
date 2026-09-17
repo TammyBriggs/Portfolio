@@ -118,6 +118,12 @@ document
   .querySelector('form[name="submit-to-google-sheet"]')
   .addEventListener("submit", function (e) {
     e.preventDefault();
+    
+    const honeypot = document.querySelector('input[name="honeypot"]').value;
+    if (honeypot) {
+      console.log("Spam detected and blocked.");
+      return; // Stops the function completely
+    }
 
     const name = document.querySelector('input[name="Name"]').value.trim();
     const email = document.querySelector('input[name="Email"]').value.trim();
@@ -202,7 +208,7 @@ document
     }).showToast();
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbzqnbJaQSxVx1ZV2e8YfIQM4DHplm4UlGQyYZB1nYdHJ_jsRzqADGXiieJhUHer84EkZA/exec",
+      "https://script.google.com/macros/s/AKfycbzqnbJaQSxVx1ZV2e8YfIQM4DHplm4UlGQyYZB1nYdHJ_jsRzqADGXiieJhUHer84EkZA/exec	",
       {
         method: "POST",
         body: new FormData(e.target),
